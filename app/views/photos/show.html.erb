@@ -1,7 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="webcontainer">
+<h1>Meet Today's Football Superstar!</h1>
 
+<hr>
+<p id="notice"><%= notice %></p>
+<br>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path, :class => 'back' %> |
+<%= link_to 'New Picture', new_photo_path %>
 <p>
-  <strong>Title:</strong>
+  <strong>Name:</strong>
   <%= @photo.title %>
 </p>
 
@@ -11,14 +19,15 @@
 </p>
 
 <p>
-  <strong>Url:</strong>
-  <%= @photo.url %>
+  <%= image_tag @photo.url, :size => "300x500" %>
 </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @photo.photo_id %>
-</p>
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+
+
+<div class="footer">
+  &copy; Arvin Hadisurya
+</div>
+
+
+<div>
