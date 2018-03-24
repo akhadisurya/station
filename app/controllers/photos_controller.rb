@@ -5,6 +5,10 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.all
+      if params[:search]
+        @photos = Photo.search(params[:search]).order("created_at DESC")
+      else
+        @photos = Photo.all.order('created_at DESC')
   end
 
   # GET /photos/1
