@@ -18,7 +18,7 @@
       <tr>
         <td><%= photo.title %></td>
         <td><%= photo.description %></td>
-        <td><%= photo.url %></td>
+        <td><%= image_tag(photo.url) %></td>
         <td><%= photo.photo_id %></td>
         <td><%= link_to 'Show', photo %></td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>

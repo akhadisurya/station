@@ -9,8 +9,8 @@ class PhotosController < ApplicationController
         @photos = Photo.search(params[:search]).order("created_at DESC")
       else
         @photos = Photo.all.order('created_at DESC')
-  end
-
+      end
+    end
   # GET /photos/1
   # GET /photos/1.json
   def show
