@@ -1,33 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div>
+    <h1>Station Digital Media</h1>
+</div>
+<hr>
+<%= button_to 'Upload a picture', new_photo_path, :method => "get" %>
 
-<h1>Listing Photos</h1>
+<%= form_tag(photos_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Pictures" %>
+<%= submit_tag "Search" %>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Url</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<ul>
     <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.title %></td>
-        <td><%= photo.description %></td>
-        <td><%= image_tag(photo.url) %></td>
-        <td><%= photo.photo_id %></td>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <li>
+            <strong> Caption: <%= photo.title %> </strong><br>
+            <%= link_to image_tag(photo.url,:size => "70x100"), photo %><br>
+            <%= link_to 'Edit', edit_photo_path(photo) %> |
+            <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+        <br>
     <% end %>
-  </tbody>
-</table>
+</ul>
+
+  <div class="footer">
+    &copy; Arvin Hadisurya
+  </div>
 
 <br>
-
-<%= link_to 'New Photo', new_photo_path %>
