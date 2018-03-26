@@ -1,13 +1,13 @@
 <div class="webcontainer">
-<h1>Meet Today's Football Superstar!</h1>
-
+<h1>SMILEEE</h1>
+<%= button_to 'Upload a picture', new_photo_path, :method => "get" %>
 <hr>
 <p id="notice"><%= notice %></p>
 <br>
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<!-- <%= link_to 'Edit', edit_photo_path(@photo) %> --> | 
 <%= link_to 'Back', photos_path, :class => 'back' %> |
-<%= link_to 'New Picture', new_photo_path %>
+
 <p>
   <strong>Name:</strong>
   <%= @photo.title %>

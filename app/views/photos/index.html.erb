@@ -1,14 +1,17 @@
-<div>
-    <h1>Station Digital Media</h1>
+<div class="webcontainer">
+    <h1>Stationgram</h1>
+    <%= button_to 'Upload a picture', new_photo_path, :method => "get" %>
 </div>
 <hr>
-<%= button_to 'Upload a picture', new_photo_path, :method => "get" %>
 
-<%= form_tag(photos_path, :method => "get", id: "search-form") do %>
+<!-- <%= form_tag(photos_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Pictures" %>
-<%= submit_tag "Search" %>
+<%= submit_tag "Search" %> -->
 <% end %>
 
+<br>
+<body>
+<div>
 <ul>
     <% @photos.each do |photo| %>
         <li>
@@ -20,6 +23,8 @@
         <br>
     <% end %>
 </ul>
+</div>
+</body>
 
   <div class="footer">
     &copy; Arvin Hadisurya
