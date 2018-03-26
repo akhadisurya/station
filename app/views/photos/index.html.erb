@@ -16,9 +16,9 @@
     <% @photos.each do |photo| %>
         <li>
             <strong> Caption: <%= photo.title %> </strong><br>
-            <%= link_to image_tag(photo.url,:size => "70x100"), photo %><br>
-            <%= link_to 'Edit', edit_photo_path(photo) %> |
-            <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to image_tag(photo.url,:size => "500x500"), photo %><br>
+            <!-- <%= link_to 'Edit', edit_photo_path(photo) %> |
+            <%= link_to 'Delete', photo, method: :delete, data: { confirm: 'Are you sure?' } %> -->
         </li>
         <br>
     <% end %>
